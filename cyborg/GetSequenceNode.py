@@ -1,4 +1,5 @@
-mport psycopg2
+
+import psycopg2
 import string
 import json
 
