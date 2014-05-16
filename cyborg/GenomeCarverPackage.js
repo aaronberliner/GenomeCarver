@@ -32,7 +32,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
 
 console.log('Defining FeaturesFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory = function (node){
-	var script = '/siteversion/cyborg/applications/GenomeCarver/cyborg/getSequenceNode.py';
+	var script = '/siteversion/cyborg/applications/GenomeCarver/cyborg/GetSequenceNode.py';
     var content;
     adskrt.ajax({ 
         url: script, 
@@ -61,9 +61,4 @@ Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
     });
     node.setPythonCompute(content);
     return node;
-};
-
-console.log('Defining ResultsFactory');
-Autodesk.Cyborg.Applications.GenomeCarver.ResultsFactory = function (node) {
-
 };
