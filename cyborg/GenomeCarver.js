@@ -26,7 +26,7 @@ adskrt._req('/siteversion/cyborg/scripts/transposable/shuttle.js');
 adskrt._req('/siteversion/cyborg/scripts/app/nodes/asmutilities.js');
 adskrt._req('/siteversion/cyborg/scripts/app/nodes/utilities.js');
 adskrt._req('/siteversion/cyborg/scripts/core/math.js');
-adskrt._req('/siteversion/cyborg/applications/GenomeCarver/cyborg/GenomeCarverPackage.js');
+adskrt._req('/siteversion/cyborg/applications/GenomeCarver/cyborg/cai_lab/GenomeCarverPackage.js');
 
 // NODES
 // Define Nodes to be used here
