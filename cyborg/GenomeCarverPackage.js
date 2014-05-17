@@ -16,7 +16,7 @@ Autodesk.Cyborg.Applications.GenomeCarver = Autodesk.Cyborg.Applications.GenomeC
 
 console.log('Defining GenomeFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
-	var script = '/siteversion/cyborg/applications/GenomeCarver/cyborg/carveNode.py';
+	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/carveNode.py';
     var content;
     adskrt.ajax({ 
         url: script, 
@@ -32,7 +32,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
 
 console.log('Defining FeaturesFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory = function (node){
-	var script = '/siteversion/cyborg/applications/GenomeCarver/cyborg/GetSequenceNode.py';
+	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/GetSequenceNode.py';
     var content;
     adskrt.ajax({ 
         url: script, 
@@ -49,7 +49,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory = function (node){
 console.log('Defining carverFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
 	node.setNodeInfo('viewtype', 'process');
-	var script = '/siteversion/cyborg/applications/GenomeCarver/cyborg/CreatePrimerNode.py';
+	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/CreatePrimerNode.py';
     var content;
     adskrt.ajax({ 
         url: script, 
