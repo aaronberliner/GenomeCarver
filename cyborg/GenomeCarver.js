@@ -76,6 +76,31 @@ var makeNodesAndConnections = function () {
     args = { nodeType: "GenomeCarver.Part"};
     Autodesk.ActionManager.instance().startStackedWithArgs('node.createnode', args);
 
+    console.log('creating connections');
+    args = { fromNodeID: 'Genome',
+             fromFieldName: 'Species',
+             toNodeID: 'select',
+             toFieldName: 'Species'};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createconnection', args);
+
+    args = { fromNodeID: 'select',
+             fromFieldName: 'Selection',
+             toNodeID: 'Feature',
+             toFieldName: 'Selection'};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createconnection', args);
+
+    args = { fromNodeID: 'Feature',
+             fromFieldName: 'Feature',
+             toNodeID: 'carve',
+             toFieldName: 'Feature'};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createconnection', args);
+
+    args = { fromNodeID: 'carve',
+             fromFieldName: 'Report',
+             toNodeID: 'Part',
+             toFieldName: 'Report'};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createconnection', args);
+
     var node = nm.getNode('Note');
     node.setFieldVal(Autodesk.Cyborg.Note.title,Autodesk.Cyborg.Note.body);
     Autodesk.Cyborg.ViewManager._instance.getViewFromType('NodeGraphView').getNodeView(node).fields[Autodesk.Cyborg.Note.title].setQuickPropertyFlag(true);
