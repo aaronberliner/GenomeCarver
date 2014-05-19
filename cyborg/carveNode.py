@@ -1,6 +1,7 @@
 import psycopg2
 import string
 import json
+import Nodes
 
 def getChromosomeLength(chromosomeList, chromosome_id):
 	for c in chromosomeList:
