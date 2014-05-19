@@ -1,6 +1,7 @@
 import psycopg2
 import string
 import json
+import Nodes
 
 def getSequence(feature,cursor):
 	cursor.execute("SELECT chromosome FROM neochromosome_chromosome WHERE id = %d"%(feature[1]))

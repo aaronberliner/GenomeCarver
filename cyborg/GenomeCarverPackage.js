@@ -21,9 +21,9 @@ Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
     adskrt.ajax({ 
         url: script, 
         async: false, 
-        cache: false,
+        cache: true, 
         success: function (_content) { content = _content;}, 
-        error: function() {console.error('Error loading the file : ' + script);}, 
+        error: function() {console.error('Error loading the file : ' + path);}, 
         dataType: 'text'
     });
     node.setPythonCompute(content);
@@ -37,9 +37,9 @@ Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory = function (node){
     adskrt.ajax({ 
         url: script, 
         async: false, 
-        cache: false,
+        cache: true, 
         success: function (_content) { content = _content;}, 
-        error: function() {console.error('Error loading the file : ' + script);}, 
+        error: function() {console.error('Error loading the file : ' + path);}, 
         dataType: 'text'
     });
     node.setPythonCompute(content);
@@ -54,11 +54,12 @@ Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
     adskrt.ajax({ 
         url: script, 
         async: false, 
-        cache: false,
+        cache: true, 
         success: function (_content) { content = _content;}, 
-        error: function() {console.error('Error loading the file : ' + script);}, 
+        error: function() {console.error('Error loading the file : ' + path);}, 
         dataType: 'text'
     });
+
     node.setPythonCompute(content);
     return node;
 };
