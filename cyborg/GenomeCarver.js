@@ -32,8 +32,9 @@ adskrt._req('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/Genome
 // Define Nodes to be used here
 defineNodeType('GenomeCarver', 'Genome', Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory);
 defineNodeType('GenomeCarver', 'select', Autodesk.Cyborg.Applications.GenomeCarver.selectFactory)
-defineNodeType('GenomeCarver', 'Features', Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory);
+defineNodeType('GenomeCarver', 'Feature', Autodesk.Cyborg.Applications.GenomeCarver.FeatureFactory);
 defineNodeType('GenomeCarver', 'carve', Autodesk.Cyborg.Applications.GenomeCarver.carveFactory);
+defineNodeType('GenomeCarver', 'Part', Autodesk.Cyborg.Applications.GenomeCarver.PartFactory);
 
 // CASSETES
 // Define Cassetes to be loaded 
@@ -41,5 +42,6 @@ var action
 createCassette('Genome Carver', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.Genome', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.select', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', 'GenomeCarver.Features', 'print3d/res/print.png');
+addCassetteItem('Genome Carver', 'GenomeCarver.Feature', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.carve', 'print3d/res/print.png');
+addCassetteItem('Genome Carver', 'GenomeCarver.Part', 'print3d/res/print.png');
