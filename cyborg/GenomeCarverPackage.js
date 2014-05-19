@@ -17,19 +17,19 @@ Autodesk.Cyborg.Applications.GenomeCarver = Autodesk.Cyborg.Applications.GenomeC
 
 console.log('Defining GenomeFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
-    node.addField('species', 'String', null);
-    node.addField('Output', 'String', null);
+    node.addField('Species', 'String', null);
 }
 
 console.log('Defining selectFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.selectFactory = function (node){
-    node.addField('Input', 'String', null);
+    node.addField('Species', 'String', null);
     node.addField('Chromosome', 'String', null);
     node.addField('FeatureName', 'String', null);
-    node.addField('CarvePara', 'String', null);
+    node.addField('CarveWhat', 'String', null);
     node.addField('CheckBoundry', 'String', null);
-    node.addField('CarvedFeature', 'String', null);
-    node.addField('Output', 'String', null);
+    node.addField('StartBasePair', 'String', null);
+    node.addField('EndBasePair', 'String', null);
+    node.addField('Selection', 'String', null);
 	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/carveNode.py';
     var content;
     adskrt.ajax({ 
@@ -44,8 +44,11 @@ Autodesk.Cyborg.Applications.GenomeCarver.selectFactory = function (node){
     return node;
 };
 
-console.log('Defining FeaturesFactory');
-Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory = function (node){
+console.log('Defining FeatureFactory');
+Autodesk.Cyborg.Applications.GenomeCarver.FeatureFactory = function (node){
+    node.addField('Selection', 'String', null);
+    node.addField('Sequence', 'String', null);
+    node.addField('Feature', 'String', null);
 	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/GetSequenceNode.py';
     var content;
     adskrt.ajax({ 
@@ -60,8 +63,14 @@ Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory = function (node){
     return node;
 };
 
-console.log('Defining carverFactory');
+console.log('Defining carveFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
+    node.addField('Feature', 'String', null);
+    node.addField('Standard', 'String', null);
+    node.addField('PrimerLength', 'String', null);
+    node.addField('Primer5', 'String', null);
+    node.addField('Primer3', 'String', null);
+    node.addField('Report', 'String', null);
 	node.setNodeInfo('viewtype', 'process');
 	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/CreatePrimerNode.py';
     var content;
@@ -77,3 +86,8 @@ Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
     node.setPythonCompute(content);
     return node;
 };
+
+console.log('Defining PartFactory');
+Autodesk.Cyborg.Applications.GenomeCarver.PartFactory = function (node){
+    node.addField('Report', 'String', null);
+}
