@@ -1,4 +1,3 @@
-
 import psycopg2
 import string
 import json
