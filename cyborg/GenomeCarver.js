@@ -28,6 +28,12 @@ adskrt._req('/siteversion/cyborg/scripts/app/nodes/utilities.js');
 adskrt._req('/siteversion/cyborg/scripts/core/math.js');
 adskrt._req('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/GenomeCarverPackage.js');
 
+Autodesk.Cyborg.Nodes.Services.setWorkspaceName(self.workspaceID, 'Genome Carver');
+setWorkspaceTitle("Genome Carver");
+Autodesk.Cyborg.Note.title="Getting_Started";
+Autodesk.Cyborg.Note.body='This is the GenomeCarver Workspace';
+setWorkspaceIcon('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/autogene_workspace.png');
+
 // NODES
 // Define Nodes to be used here
 defineNodeType('GenomeCarver', 'Genome', Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory);
@@ -45,3 +51,36 @@ addCassetteItem('Genome Carver', 'GenomeCarver.select', 'print3d/res/print.png')
 addCassetteItem('Genome Carver', 'GenomeCarver.Feature', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.carve', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.Part', 'print3d/res/print.png');
+
+var makeNodesAndConnections = function () {
+	console.log('Calling makeNodesAndConnections');
+    var ngv = Autodesk.Cyborg.ViewManager.instance().getViewFromType('NodeGraphView');
+    var nm = Autodesk.Cyborg.NodeManager.instance();
+    
+    console.log('creating nodes');
+    var args = { nodeType: "Note"};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createnode', args);
+
+    args = { nodeType: "GenomeCarver.Genome"};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createnode', args);
+
+    args = { nodeType: "GenomeCarver.select"};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createnode', args);
+
+    args = { nodeType: "GenomeCarver.Feature"};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createnode', args);
+
+    args = { nodeType: "GenomeCarver.carve"};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createnode', args);
+
+    args = { nodeType: "GenomeCarver.Part"};
+    Autodesk.ActionManager.instance().startStackedWithArgs('node.createnode', args);
+
+    var node = nm.getNode('Note');
+    node.setFieldVal(Autodesk.Cyborg.Note.title,Autodesk.Cyborg.Note.body);
+    Autodesk.Cyborg.ViewManager._instance.getViewFromType('NodeGraphView').getNodeView(node).fields[Autodesk.Cyborg.Note.title].setQuickPropertyFlag(true);
+    var noteNode = ngv.getNodeView(nm.getNode('Note'));
+    noteNode.setPosition(40,560);
+};
+
+onLoad(makeNodesAndConnections);
