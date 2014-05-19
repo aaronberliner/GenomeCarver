@@ -18,6 +18,7 @@ Autodesk.Cyborg.Applications.GenomeCarver = Autodesk.Cyborg.Applications.GenomeC
 console.log('Defining GenomeFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
     node.addField('Species', 'String', null);
+    node.setFieldValidValues('Species', [ {value: 'S.cerevisiae'} , {value: 'A.gossypii'}, {value: 'A.thaliana'} ]);
 }
 
 console.log('Defining selectFactory');
@@ -26,7 +27,9 @@ Autodesk.Cyborg.Applications.GenomeCarver.selectFactory = function (node){
     node.addField('Chromosome', 'String', null);
     node.addField('FeatureName', 'String', null);
     node.addField('CarveWhat', 'String', null);
+    node.setFieldValidValues('CarveWhat', [ {value: 'promotor'} , {value: 'terminator'} ] );
     node.addField('CheckBoundry', 'String', null);
+    node.setFieldValidValues('CheckBoundry', [ {value: 'True'} , {value: 'False'} ] );
     node.addField('StartBasePair', 'String', null);
     node.addField('EndBasePair', 'String', null);
     node.addField('Selection', 'String', null);
@@ -67,6 +70,7 @@ console.log('Defining carveFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
     node.addField('Feature', 'String', null);
     node.addField('Standard', 'String', null);
+    node.setFieldValidValues('Standard', [ {value: 'GoldenGate'} , {value: 'BioBricks'} ] );
     node.addField('PrimerLength', 'String', null);
     node.addField('Primer5', 'String', null);
     node.addField('Primer3', 'String', null);
