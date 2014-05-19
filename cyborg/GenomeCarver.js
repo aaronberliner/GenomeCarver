@@ -101,6 +101,21 @@ var makeNodesAndConnections = function () {
              toFieldName: 'Report'};
     Autodesk.ActionManager.instance().startStackedWithArgs('node.createconnection', args);
 
+    console.log('getting views');
+    var GenomeNode = ngv.getNodeView(nm.getNode('Genome'));
+    var selectNode = ngv.getNodeView(nm.getNode('select'));
+    var FeatureNode = ngv.getNodeView(nm.getNode('Feature'));
+    var carveNode = ngv.getNodeView(nm.getNode('carve'));
+    var PartNode = ngv.getNodeView(nm.getNode('Part'));
+
+    console.log('setting view positions');
+    GenomeNode.setPosition(200,200);
+    selectNode.setPosition(350,200);
+    FeatureNode.setPosition(500,200);
+    carveNode.setPosition(650,200);
+    PartNode.setPosition(800,200);
+
+    // Note Node Visuals
     var node = nm.getNode('Note');
     node.setFieldVal(Autodesk.Cyborg.Note.title,Autodesk.Cyborg.Note.body);
     Autodesk.Cyborg.ViewManager._instance.getViewFromType('NodeGraphView').getNodeView(node).fields[Autodesk.Cyborg.Note.title].setQuickPropertyFlag(true);
