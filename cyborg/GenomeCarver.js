@@ -1,7 +1,7 @@
 // Genome Carver.js
 
 // NOTE: sourceURL needs a line above it.  Don't know why...
-//@ sourceURL=/siteversion/cyborg/applications/GenomeCarver/GenomeCarver.js
+//@ sourceURL=/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/GenomeCarver.js
 
 // Copyright 2014 Autodesk, Inc.  All rights reserved. 
 // This computer source code and related instructions and comments
