@@ -14,8 +14,22 @@
 Autodesk.Cyborg.Applications = Autodesk.Cyborg.Applications || {};
 Autodesk.Cyborg.Applications.GenomeCarver = Autodesk.Cyborg.Applications.GenomeCarver || {};
 
+
 console.log('Defining GenomeFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
+    node.addField('species', 'String', null);
+    node.addField('Output', 'String', null);
+}
+
+console.log('Defining selectFactory');
+Autodesk.Cyborg.Applications.GenomeCarver.selectFactory = function (node){
+    node.addField('Input', 'String', null);
+    node.addField('Chromosome', 'String', null);
+    node.addField('FeatureName', 'String', null);
+    node.addField('CarvePara', 'String', null);
+    node.addField('CheckBoundry', 'String', null);
+    node.addField('CarvedFeature', 'String', null);
+    node.addField('Output', 'String', null);
 	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/carveNode.py';
     var content;
     adskrt.ajax({ 
@@ -23,7 +37,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
         async: false, 
         cache: true, 
         success: function (_content) { content = _content;}, 
-        error: function() {console.error('Error loading the file : ' + path);}, 
+        error: function() {console.error('Error loading the file : ' + script);}, 
         dataType: 'text'
     });
     node.setPythonCompute(content);
@@ -39,7 +53,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory = function (node){
         async: false, 
         cache: true, 
         success: function (_content) { content = _content;}, 
-        error: function() {console.error('Error loading the file : ' + path);}, 
+        error: function() {console.error('Error loading the file : ' + script);}, 
         dataType: 'text'
     });
     node.setPythonCompute(content);
@@ -56,7 +70,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
         async: false, 
         cache: true, 
         success: function (_content) { content = _content;}, 
-        error: function() {console.error('Error loading the file : ' + path);}, 
+        error: function() {console.error('Error loading the file : ' + script);}, 
         dataType: 'text'
     });
 

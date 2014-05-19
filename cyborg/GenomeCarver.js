@@ -31,6 +31,7 @@ adskrt._req('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/Genome
 // NODES
 // Define Nodes to be used here
 defineNodeType('GenomeCarver', 'Genome', Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory);
+defineNodeType('GenomeCarver', 'select', Autodesk.Cyborg.Applications.GenomeCarver.selectFactory)
 defineNodeType('GenomeCarver', 'Features', Autodesk.Cyborg.Applications.GenomeCarver.FeaturesFactory);
 defineNodeType('GenomeCarver', 'carve', Autodesk.Cyborg.Applications.GenomeCarver.carveFactory);
 
