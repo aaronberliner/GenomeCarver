@@ -40,5 +40,6 @@ defineNodeType('GenomeCarver', 'carve', Autodesk.Cyborg.Applications.GenomeCarve
 var action
 createCassette('Genome Carver', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.Genome', 'print3d/res/print.png');
+addCassetteItem('Genome Carver', 'GenomeCarver.select', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.Features', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.carve', 'print3d/res/print.png');
