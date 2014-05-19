@@ -17,18 +17,19 @@ Autodesk.Cyborg.Applications.GenomeCarver = Autodesk.Cyborg.Applications.GenomeC
 
 console.log('Defining GenomeFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.GenomeFactory = function (node){
-    node.addField('Species', 'String', null);
+    node.addField('Species', 'String', 'S.cerevisiae');
     node.setFieldValidValues('Species', [ {value: 'S.cerevisiae'} , {value: 'A.gossypii'}, {value: 'A.thaliana'} ]);
 }
 
 console.log('Defining selectFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.selectFactory = function (node){
+    node.setNodeInfo('viewtype', 'process');
     node.addField('Species', 'String', null);
     node.addField('Chromosome', 'String', null);
     node.addField('FeatureName', 'String', null);
-    node.addField('CarveWhat', 'String', null);
+    node.addField('CarveWhat', 'String', 'promotor');
     node.setFieldValidValues('CarveWhat', [ {value: 'promotor'} , {value: 'terminator'} ] );
-    node.addField('CheckBoundry', 'String', null);
+    node.addField('CheckBoundry', 'String', 'True');
     node.setFieldValidValues('CheckBoundry', [ {value: 'True'} , {value: 'False'} ] );
     node.addField('StartBasePair', 'String', null);
     node.addField('EndBasePair', 'String', null);
@@ -68,14 +69,14 @@ Autodesk.Cyborg.Applications.GenomeCarver.FeatureFactory = function (node){
 
 console.log('Defining carveFactory');
 Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
+    node.setNodeInfo('viewtype', 'process');
     node.addField('Feature', 'String', null);
-    node.addField('Standard', 'String', null);
+    node.addField('Standard', 'String', 'GoldenGate');
     node.setFieldValidValues('Standard', [ {value: 'GoldenGate'} , {value: 'BioBricks'} ] );
-    node.addField('PrimerLength', 'String', null);
+    node.addField('PrimerLength', 'String', 25);
     node.addField('Primer5', 'String', null);
     node.addField('Primer3', 'String', null);
     node.addField('Report', 'String', null);
-	node.setNodeInfo('viewtype', 'process');
 	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/CreatePrimerNode.py';
     var content;
     adskrt.ajax({ 
