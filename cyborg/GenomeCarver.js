@@ -65,15 +65,14 @@ var carveAction = {
 };
 
 
-
 // CASSETES
 // Define Cassetes to be loaded 
 var action
-createCassette('Genome Carver', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', 'GenomeCarver.Genome', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', selectAction, 'print3d/res/print.png');
+createCassette('Genome Carver', '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/GenomeCarver.png');
+addCassetteItem('Genome Carver', 'GenomeCarver.Genome', '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/DNA sequence.png');
+addCassetteItem('Genome Carver', selectAction, '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/Feature.png.png');
 // addCassetteItem('Genome Carver', 'GenomeCarver.Feature', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', carveAction, 'print3d/res/print.png');
+addCassetteItem('Genome Carver', carveAction, '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/CutFeature.png');
 // addCassetteItem('Genome Carver', 'GenomeCarver.Part', 'print3d/res/print.png');
 
 
