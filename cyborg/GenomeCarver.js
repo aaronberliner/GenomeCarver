@@ -56,14 +56,14 @@ var carveAction = {
 };
 
 var selectArgs = JSON.stringify([
-        {'outputField': 'Species', 'inputField':'Species', 'nodeType':'autogene.select' },
-        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'autogene.Feature' }
-    ]);
+        {'outputField': 'Species', 'inputField':'Species', 'nodeType':'GenomeCarver.select' },
+        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'GenomeCarver.Feature' }
+]);
 
 var carveArgs = JSON.stringify([
-        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'autogene.carve' },
-        {'outputField': 'Report', 'inputField':'Report', 'nodeType':'autogene.Part' }
-    ]);
+        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'GenomeCarver.carve' },
+        {'outputField': 'Report', 'inputField':'Report', 'nodeType':'GenomeCarver.Part' }
+]);
 
 // CASSETES
 // Define Cassetes to be loaded 
