@@ -109,11 +109,11 @@ var makeNodesAndConnections = function () {
     var PartNode = ngv.getNodeView(nm.getNode('Part'));
 
     console.log('setting view positions');
-    GenomeNode.setPosition(200,200);
-    selectNode.setPosition(350,200);
-    FeatureNode.setPosition(500,200);
-    carveNode.setPosition(650,200);
-    PartNode.setPosition(800,200);
+    GenomeNode.setPosition(400,200);
+    selectNode.setPosition(550,200);
+    FeatureNode.setPosition(700,200);
+    carveNode.setPosition(850,200);
+    PartNode.setPosition(1000,200);
 
     // Note Node Visuals
     var node = nm.getNode('Note');
