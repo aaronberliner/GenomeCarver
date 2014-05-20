@@ -42,6 +42,15 @@ defineNodeType('GenomeCarver', 'Feature', Autodesk.Cyborg.Applications.GenomeCar
 defineNodeType('GenomeCarver', 'carve', Autodesk.Cyborg.Applications.GenomeCarver.carveFactory);
 defineNodeType('GenomeCarver', 'Part', Autodesk.Cyborg.Applications.GenomeCarver.PartFactory);
 
+var selectArgs = JSON.stringify([
+        {'outputField': 'Species', 'inputField':'Species', 'nodeType':'GenomeCarver.select' },
+        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'GenomeCarver.Feature' }
+]);
+
+var carveArgs = JSON.stringify([
+        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'GenomeCarver.carve' },
+        {'outputField': 'Report', 'inputField':'Report', 'nodeType':'GenomeCarver.Part' }
+]);
 
 var selectAction = {
     'name': 'select',
@@ -55,15 +64,7 @@ var carveAction = {
     'args': carveArgs
 };
 
-var selectArgs = JSON.stringify([
-        {'outputField': 'Species', 'inputField':'Species', 'nodeType':'GenomeCarver.select' },
-        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'GenomeCarver.Feature' }
-]);
 
-var carveArgs = JSON.stringify([
-        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'GenomeCarver.carve' },
-        {'outputField': 'Report', 'inputField':'Report', 'nodeType':'GenomeCarver.Part' }
-]);
 
 // CASSETES
 // Define Cassetes to be loaded 
