@@ -44,7 +44,7 @@ defineNodeType('GenomeCarver', 'Part', Autodesk.Cyborg.Applications.GenomeCarver
 
 var selectArgs = JSON.stringify([
         {'outputField': 'Species', 'inputField':'Species', 'nodeType':'GenomeCarver.select' },
-        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'GenomeCarver.Feature' }
+        {'outputField': 'Selection', 'inputField':'Selection', 'nodeType':'GenomeCarver.Feature' }
 ]);
 
 var carveArgs = JSON.stringify([
