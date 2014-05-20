@@ -42,15 +42,39 @@ defineNodeType('GenomeCarver', 'Feature', Autodesk.Cyborg.Applications.GenomeCar
 defineNodeType('GenomeCarver', 'carve', Autodesk.Cyborg.Applications.GenomeCarver.carveFactory);
 defineNodeType('GenomeCarver', 'Part', Autodesk.Cyborg.Applications.GenomeCarver.PartFactory);
 
+
+var selectAction = {
+    'name': 'select',
+    'cmd': 'node.createandconnectnodes',
+    'args': selectArgs
+};
+
+var carveAction = {
+    'name': 'carve',
+    'cmd': 'node.createandconnectnodes',
+    'args': carveArgs
+};
+
+var selectArgs = JSON.stringify([
+        {'outputField': 'Species', 'inputField':'Species', 'nodeType':'autogene.select' },
+        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'autogene.Feature' }
+    ]);
+
+var carveArgs = JSON.stringify([
+        {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'autogene.carve' },
+        {'outputField': 'Report', 'inputField':'Report', 'nodeType':'autogene.Part' }
+    ]);
+
 // CASSETES
 // Define Cassetes to be loaded 
 var action
 createCassette('Genome Carver', 'print3d/res/print.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.Genome', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', 'GenomeCarver.select', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', 'GenomeCarver.Feature', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', 'GenomeCarver.carve', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', 'GenomeCarver.Part', 'print3d/res/print.png');
+addCassetteItem('Genome Carver', selectAction, 'print3d/res/print.png');
+// addCassetteItem('Genome Carver', 'GenomeCarver.Feature', 'print3d/res/print.png');
+addCassetteItem('Genome Carver', carveAction, 'print3d/res/print.png');
+// addCassetteItem('Genome Carver', 'GenomeCarver.Part', 'print3d/res/print.png');
+
 
 var makeNodesAndConnections = function () {
 	console.log('Calling makeNodesAndConnections');
