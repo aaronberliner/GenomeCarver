@@ -162,14 +162,14 @@ def carver2(self):
 	else:
 		species = self.Species
 
-	carvePara = self.CarvePara
+	carvePara = self.CarveWhat
 	checkBoundry = self.CheckBoundry
 	pt = checkPT(featureName,species,carvePara,checkBoundry,cursor); 
 
-	self.CarvedFeature = "%s,%s,%d,%d,%s"%(pt[0],pt[1],pt[2],pt[3],pt[4])
-	self.Output = json.dumps({"Species":self.Species,"Chromosome":self.Chromosome,"FeatureName":self.FeatureName, "CheckBoundry": self.CheckBoundry,"CarvedFeature":self.CarvedFeature,"CarvePara":self.CarvePara})
+	self.StartBasePair = pt[2]
+	self.EndBasePair = pt[3]
+	self.Selection = json.dumps({"Species":self.Species,"Chromosome":self.Chromosome,"FeatureName":self.FeatureName, "CheckBoundry": self.CheckBoundry,"CarvedFeature":pt,"CarvePara":self.CarveWhat})
 
 carver2(self)
-
 
 
