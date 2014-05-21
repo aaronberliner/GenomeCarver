@@ -29,8 +29,8 @@ Autodesk.Cyborg.Applications.GenomeCarver.selectFactory = function (node){
     node.addField('FeatureName', 'String', null);
     node.addField('TargetPart', 'String', 'promotor');
     node.setFieldValidValues('TargetPart', [ {value: 'promotor'} , {value: 'terminator'} ] );
-    node.addField('CheckBoundry', 'String', 'True');
-    node.setFieldValidValues('CheckBoundry', [ {value: 'True'} , {value: 'False'} ] );
+    node.addField('CheckBoundary', 'String', 'True');
+    node.setFieldValidValues('CheckBoundary', [ {value: 'True'} , {value: 'False'} ] );
     node.addField('StartBasePair', 'String', null);
     node.addField('EndBasePair', 'String', null);
     node.addField('Selection', 'String', null);
