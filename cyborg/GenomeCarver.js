@@ -42,31 +42,26 @@ defineNodeType('GenomeCarver', 'Feature', Autodesk.Cyborg.Applications.GenomeCar
 defineNodeType('GenomeCarver', 'carve', Autodesk.Cyborg.Applications.GenomeCarver.carveFactory);
 defineNodeType('GenomeCarver', 'Part', Autodesk.Cyborg.Applications.GenomeCarver.PartFactory);
 
+// CASSETES
+// Define Cassetes to be loaded 
 var selectArgs = JSON.stringify([
         {'outputField': 'Species', 'inputField':'Species', 'nodeType':'GenomeCarver.select' },
         {'outputField': 'Selection', 'inputField':'Selection', 'nodeType':'GenomeCarver.Feature' }
 ]);
-
 var carveArgs = JSON.stringify([
         {'outputField': 'Feature', 'inputField':'Feature', 'nodeType':'GenomeCarver.carve' },
         {'outputField': 'Report', 'inputField':'Report', 'nodeType':'GenomeCarver.Part' }
 ]);
-
 var selectAction = {
     'name': 'Select Feature',
     'cmd': 'node.createandconnectnodes',
     'args': selectArgs
 };
-
 var carveAction = {
     'name': 'Carve',
     'cmd': 'node.createandconnectnodes',
     'args': carveArgs
 };
-
-
-// CASSETES
-// Define Cassetes to be loaded 
 var action
 createCassette('Genome Carver', '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/GenomeCarver.png');
 addCassetteItem('Genome Carver', 'GenomeCarver.Genome', '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/DNA sequence.png');
@@ -75,7 +70,7 @@ addCassetteItem('Genome Carver', selectAction, '/siteversion/cyborg/applications
 addCassetteItem('Genome Carver', carveAction, '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/CutFeature.png');
 // addCassetteItem('Genome Carver', 'GenomeCarver.Part', 'print3d/res/print.png');
 
-
+// DEFINE INITIAL WORKSPACE
 var makeNodesAndConnections = function () {
 	console.log('Calling makeNodesAndConnections');
     var ngv = Autodesk.Cyborg.ViewManager.instance().getViewFromType('NodeGraphView');
