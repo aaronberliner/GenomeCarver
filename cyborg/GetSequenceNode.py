@@ -1,6 +1,7 @@
-mport psycopg2
+import psycopg2
 import string
 import json
+import Nodes
 
 def getSequence(feature,cursor):
 	cursor.execute("SELECT chromosome FROM neochromosome_chromosome WHERE id = %d"%(feature[1]))
@@ -17,18 +18,14 @@ def carver2(self):
 	
 	cursor = connection.cursor()
 	
-	para = json.loads(self.Input)
-	self.CarvedFeature = para["CarvedFeature"]
+	para = json.loads(self.Selection)
+	feature  = para["CarvedFeature"]
 	
-	featureStr = self.CarvedFeature
-	feature = featureStr.split(",")
 	for i in range(0,4):
 		feature[i] = int(feature[i])
 	
 	self.Sequence = getSequence(feature,cursor)
 	para["Sequence"]=self.Sequence
-	self.Output = json.dumps(para)
+	self.Feature = json.dumps(para)
 
 carver2(self)
-
-

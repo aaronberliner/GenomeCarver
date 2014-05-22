@@ -1,6 +1,7 @@
-mport psycopg2
+import psycopg2
 import string
 import json
+import Nodes
 
 def getChromosomeLength(chromosomeList, chromosome_id):
 	for c in chromosomeList:
@@ -161,14 +162,12 @@ def carver2(self):
 	else:
 		species = self.Species
 
-	carvePara = self.CarvePara
-	checkBoundry = self.CheckBoundry
-	pt = checkPT(featureName,species,carvePara,checkBoundry,cursor); 
+	carvePara = self.TargetPart
+	checkBoundary = self.CheckBoundary
+	pt = checkPT(featureName,species,carvePara,checkBoundary,cursor); 
 
-	self.CarvedFeature = "%s,%s,%d,%d,%s"%(pt[0],pt[1],pt[2],pt[3],pt[4])
-	self.Output = json.dumps({"Species":self.Species,"Chromosome":self.Chromosome,"FeatureName":self.FeatureName, "CheckBoundry": self.CheckBoundry,"CarvedFeature":self.CarvedFeature,"CarvePara":self.CarvePara})
+	self.StartBasePair = pt[2]
+	self.EndBasePair = pt[3]
+	self.Selection = json.dumps({"Species":self.Species,"Chromosome":self.Chromosome,"FeatureName":self.FeatureName, "CheckBoundary": self.CheckBoundary,"CarvedFeature":pt,"CarvePara":self.TargetPart})
 
 carver2(self)
-
-
-

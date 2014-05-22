@@ -1,10 +1,11 @@
-mport psycopg2
+import psycopg2
 import string
 import json
+import Nodes
 
 def carver2(self):
-	para = json.loads(self.Input)
-	self.Sequence = para["Sequence"]
+	para = json.loads(self.Feature)
+	sequence = para["Sequence"]
 	chromosome = para["Chromosome"]
 	checkBoundry = para["CheckBoundry"]
 	featureName = para["FeatureName"]
@@ -18,10 +19,10 @@ def carver2(self):
 
 
 	std = self.Standard
-	stdDict = {'promoter5':'GGTC','promoter3':'CATC','orf5':'GATG','orf3':'GCTA','terminator5':'TAGC','terminator3':'GAGG'}
+	stdDict = {'promotor5':'GGTC','promotor3':'CATC','orf5':'GATG','orf3':'GCTA','terminator5':'TAGC','terminator3':'GAGG'}
 	cStr5 = stdDict[carvePara+'5']
 	cStr3 = stdDict[carvePara+'3']
-	srcStr5 = str(self.Sequence)
+	srcStr5 = str(sequence)
 	srcStr3 = str(srcStr5)[::-1]
 	srcStr3 = srcStr3.translate(string.maketrans("AaTtCcGg","TtAaGgCc"))
 	primerLength = int(self.PrimerLength)
@@ -34,6 +35,3 @@ def carver2(self):
 	self.Report = "http://genomecarver.cailab.org/carve/?species=%s&chromosomeName=%s&geneName=%s&checkBoundry=%s&standard=%s&carvePara=%s"%(species,chromosome,featureName,checkBoundry,self.Standard,carvePara)
 
 carver2(self)
-
-
-
