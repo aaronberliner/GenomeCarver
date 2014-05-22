@@ -7,7 +7,7 @@ def carver2(self):
 	para = json.loads(self.Feature)
 	sequence = para["Sequence"]
 	chromosome = para["Chromosome"]
-	checkBoundry = para["CheckBoundry"]
+	checkBoundry = para["CheckBoundary"]
 	featureName = para["FeatureName"]
 	if para["Species"] == "S.cerevisiae":
 		species = "SC"
@@ -15,7 +15,7 @@ def carver2(self):
 		species = "AT"
 	else:
 		species = self.Species
-	carvePara = para["CarvePara"]
+	TargetPart = para["TargetPart"]
 
 
 	std = self.Standard
@@ -32,7 +32,7 @@ def carver2(self):
 	else:
 		self.Primer5 = "not support yet"
 	
-	self.Report = "http://genomecarver.cailab.org/carve/?species=%s&chromosomeName=%s&geneName=%s&checkBoundry=%s&standard=%s&carvePara=%s"%(species,chromosome,featureName,checkBoundry,self.Standard,carvePara)
+	self.Report = "http://genomecarver.cailab.org/carve/?species=%s&chromosomeName=%s&geneName=%s&checkBoundry=%s&standard=%s&carvePara=%s"%(species,chromosome,featureName,checkBoundry,self.Standard,TargetPart)
 
 carver2(self)
 
