@@ -35,3 +35,6 @@ def carver2(self):
 	self.Report = "http://genomecarver.cailab.org/carve/?species=%s&chromosomeName=%s&geneName=%s&checkBoundry=%s&standard=%s&carvePara=%s"%(species,chromosome,featureName,checkBoundry,self.Standard,carvePara)
 
 carver2(self)
+
+
+
