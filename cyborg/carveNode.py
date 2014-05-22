@@ -169,5 +169,6 @@ def carver2(self):
 	self.StartBasePair = pt[2]
 	self.EndBasePair = pt[3]
 	self.Selection = json.dumps({"Species":self.Species,"Chromosome":self.Chromosome,"FeatureName":self.FeatureName, "CheckBoundary": self.CheckBoundary,"CarvedFeature":pt,"CarvePara":self.TargetPart})
+	
 
 carver2(self)
