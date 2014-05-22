@@ -20,8 +20,8 @@ def carver2(self):
 
 	std = self.Standard
 	stdDict = {'promotor5':'GGTC','promotor3':'CATC','orf5':'GATG','orf3':'GCTA','terminator5':'TAGC','terminator3':'GAGG'}
-	cStr5 = stdDict[carvePara+'5']
-	cStr3 = stdDict[carvePara+'3']
+	cStr5 = stdDict[TargetPart+'5']
+	cStr3 = stdDict[TargetPart+'3']
 	srcStr5 = str(sequence)
 	srcStr3 = str(srcStr5)[::-1]
 	srcStr3 = srcStr3.translate(string.maketrans("AaTtCcGg","TtAaGgCc"))
