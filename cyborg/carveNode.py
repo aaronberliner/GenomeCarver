@@ -3,7 +3,6 @@ import string
 import json
 import Nodes
 
-
 def getChromosomeLength(chromosomeList, chromosome_id):
 	for c in chromosomeList:
 		if c[0] == chromosome_id:
