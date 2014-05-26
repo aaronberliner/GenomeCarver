@@ -31,7 +31,12 @@ adskrt._req('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/Genome
 Autodesk.Cyborg.Nodes.Services.setWorkspaceName(self.workspaceID, 'Genome Carver');
 setWorkspaceTitle("Genome Carver");
 Autodesk.Cyborg.Note.title="Getting_Started";
-Autodesk.Cyborg.Note.body= 'Welcome to the GenomeCarver workspace. This workspace was created through a collaboration between The Bio/Nano/Programmable Matter research Group and the CaiLab based at the University of Edinburgh. We present GenomeCarver, a computational tool for the harvesting and packaging of biological parts from model genomes. GenomeCarver interfaces with various genomes, identifies regions of interest according to user specification and extraction extracts corresponding DNA sequences from the genome feature files (GFFs), checks the sequence’s compatibility with the selected standard, and finally outputs optimized primer sequences to amplify the parts from genomic DNA, adding necessary flanking sequences to standardize the parts.Through its compatibility with multiple genomes and multiple parts standards, GenomeCarver bridges systems biology and synthetic biology, and greatly enriches synthetic biologists’ design toolbox. It complements many parts-based design tools which currently exist by supporting the Synthetic Biology Open Language (SBOL) standard. The BNPM group openly supports the SBOL community.';
+Autodesk.Cyborg.Note.body= 'GenomeCarver
+
+Created in collaboration with Cai Lab at the University of Edinburgh, this application harvests and packages biological parts from model genomes based on various part Standards. GenomeCarver carves DNA sequences from genome feature files (GFF) based on user selection, ensures sequence compatibility with various Standards, and outputs optimized parts.
+ 
+To get started, identify a species genome. Then, select a chromosome, feature, and target part of interest. Specify the carve Standard of your Feature selection, and see the resulting carved Part. Open the resulting Part report in a browser to see its visualization.';
+
 setWorkspaceIcon('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/autogene_workspace.png');
 
 // NODES
