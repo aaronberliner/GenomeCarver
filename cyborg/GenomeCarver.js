@@ -31,7 +31,7 @@ adskrt._req('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/Genome
 Autodesk.Cyborg.Nodes.Services.setWorkspaceName(self.workspaceID, 'Genome Carver');
 setWorkspaceTitle("Genome Carver");
 Autodesk.Cyborg.Note.title="Getting_Started";
-Autodesk.Cyborg.Note.body= 'Created in collaboration with Cai Lab at the University of Edinburgh, the Genome Carver application harvests and packages biological parts from model genomes based on various part Standards. GenomeCarver carves DNA sequences from genome feature files (GFF) based on user selection, ensures sequence compatibility with various Standards, and outputs optimized parts. \nTo get started, identify a species genome. Then, select a chromosome, feature, and target part of interest. Specify the carve Standard of your Feature selection, and see the resulting carved Part. Open the resulting Part report in a browser to see its visualization.';
+Autodesk.Cyborg.Note.body= 'Created in collaboration with Cai Lab at the University of Edinburgh, the GenomeCarver application harvests and packages biological parts from model genomes based on various part Standards. GenomeCarver carves DNA sequences from genome feature files (GFF) based on user selection, ensures sequence compatibility with various Standards, and outputs optimized parts. \nTo get started, identify a species genome. Then, select a chromosome, feature, and target part of interest. Specify the carve Standard of your Feature selection, and see the resulting carved Part. Open the resulting Part report in a browser to see its visualization.';
 setWorkspaceIcon('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/autogene_workspace.png');
 
 // NODES
