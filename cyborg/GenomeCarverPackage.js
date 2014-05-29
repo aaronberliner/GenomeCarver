@@ -55,7 +55,6 @@ Autodesk.Cyborg.Applications.GenomeCarver.selectFactory = function (node){
         $tempDiv.empty();
         $tempDiv.append($tempVal);
         node.setFieldVal('FeatureName', FeatureNameVal);
-        return node
     };
 
 	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/carveNode.py';
